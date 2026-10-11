@@ -75,4 +75,5 @@ app.post("/api/stkpush", handleStk);
 app.post("/stk", handleStk);
 app.post("/callback", (req, res) => { console.log("Callback:", JSON.stringify(req.body)); res.json({ ok: true }); });
 
-app.listen(10000, () => console.log("Running on 10000"));
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => console.log("Running on " + PORT));
